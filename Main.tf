@@ -21,11 +21,14 @@ resource "aws_instance" "Amazon-Linux-App" {
 
   user_data = <<EOF
 #!/bin/bash
+#!/bin/bash
 sudo yum update -y
-sudo yum install -y httpd.x86_64
-sudo systemctl start httpd.service
-sudo systemctl enable httpd.service
+sudo yum install httpd -y
+sudo systemctl start httpd
+sudo systemctl status httpd
+sudo yum systemctl enable httpd.service
 EOF
+
   tags = {
     Name = "Amazon-Linux"
   }

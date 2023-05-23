@@ -8,11 +8,11 @@
 # Route_table_id - (REQUIRED) The ID of the routing table to associate with.
 
 resource "aws_route_table_association" "rta_a" {
+  subnet_id      = aws_subnet.Amazon_Linux_main.id
+  route_table_id = aws_route_table.testcase.id
+}
+resource "aws_route_table_association" "rta_b" {
   subnet_id      = aws_subnet.ubuntu_main.id
   route_table_id = aws_route_table.testcase.id
 }
 
-resource "aws_route_table_association" "rta_b" {
-  subnet_id      = aws_subnet.redhat_main.id
-  route_table_id = aws_route_table.testcase.id
-}

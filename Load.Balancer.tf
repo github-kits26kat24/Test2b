@@ -3,7 +3,7 @@ resource "aws_lb" "test" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.testcase_sg.id]
-  subnets            = [aws_subnet.ubuntu_main.id, aws_subnet.redhat_main.id]
+  subnets            = [aws_subnet.ubuntu_main.id, aws_subnet.Amazon_Linux_main.id]
 
   enable_deletion_protection = false
 
@@ -21,6 +21,7 @@ resource "aws_lb_listener" "test_front_end" {
   load_balancer_arn = aws_lb.test.arn
   port              = "80"
   protocol          = "HTTPS"
+  certificate_arn   = "arn:aws:iam::187416307283:server-certificate/test_cert_rab3wuqwgja25ct3n4jdj2tzu4"
 
   default_action {
     type             = "forward"
