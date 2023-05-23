@@ -43,6 +43,15 @@
 #   type = map(string)
 #   default = {
 
+# variable "lb_tg_arn" {
+#   type    = string
+#   default = ""
+# }
+
+# variable "lb_tg_name" {
+#   type    = string
+#   default = ""
+# }
 
 #   }
 # } 

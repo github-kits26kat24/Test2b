@@ -1,6 +1,7 @@
 git # Local .terraform directories
 **/.terraform/*
 .terraform*
+kitskat.pem*
 
 # .tfstate files
 *.tfstate
