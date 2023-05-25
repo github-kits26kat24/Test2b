@@ -7,7 +7,7 @@ resource "aws_instance" "Amazon-Linux-App" {
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.Amazon_Linux_main.id
   vpc_security_group_ids = [aws_security_group.testcase_sg.id]
-  count                  = 1
+#  count                  = 1
   key_name               = "Kitskat2023"
 
   # https://cloudkatha.com/how-to-install-apache-web-server-on-amazon-linux-2/?utm_content=cmp-true
@@ -39,7 +39,7 @@ resource "aws_instance" "Ubuntu-App" {
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.ubuntu_main.id
   vpc_security_group_ids = [aws_security_group.testcase_sg.id]
-  count                  = 1
+#  count                  = 1
   key_name               = "Kitskat2023"
 
   # https://cloudkatha.com/how-to-install-apache-2-on-aws-ec2-instance-ubuntu-20-04/
